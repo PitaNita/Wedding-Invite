@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanita & Alec - Viking Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Uncial Antiqua', cursive;
+      color: #fff;
+      background-image: url('tree-of-life-viking.jpg'); /* Replace with actual image path */
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .clue, .rsvp, .details, .photos {
+      margin-top: 40px;
+    }
+    input, button {
+      font-size: 1.2em;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Welcome to the Wedding of Tanita Conway & Alec Young</h1>
+    <div class="clue">
+      <p><em>"Through the roots of old and branches high,<br>
+        Our bond was carved beneath the sky.<br>
+        Decode the runes that hide our song,<br>
+        To find the place where hearts belong."</em></p>
+      <p>Hint: It's a classic Rod Stewart song...</p>
+      <input type="text" id="codeInput" placeholder="Enter the answer">
+      <button onclick="checkAnswer()">Submit</button>
+      <p id="errorMsg" style="color: red;"></p>
+    </div>
+
+    <div id="secretContent" class="hidden">
+      <div class="photos">
+        <h2>Our Journey</h2>
+        <p>Photos of us go here</p>
+        <!-- Insert photos using <img> tags -->
+      </div>
+      <div class="details">
+        <h2>Wedding Details</h2>
+        <p><strong>Date:</strong> TBC</p>
+        <p><strong>Location:</strong> TBC</p>
+        <p><strong>Dress Code:</strong> Viking-inspired or Formal</p>
+      </div>
+      <div class="rsvp">
+        <h2>RSVP</h2>
+        <p>Please RSVP by [Date TBC]</p>
+        <p>Email: <a href="mailto:tanitaandalec@example.com">tanitaandalec@example.com</a></p>
+        <!-- Or embed a form here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("codeInput").value.trim().toLowerCase();
+      const correctAnswer = "forever young";
+      const errorMsg = document.getElementById("errorMsg");
+      if (input === correctAnswer) {
+        document.getElementById("secretContent").classList.remove("hidden");
+        errorMsg.textContent = "";
+      } else {
+        errorMsg.textContent = "That's not quite right. Try again.";
+      }
+    }
+  </script>
+</body>
+</html>
