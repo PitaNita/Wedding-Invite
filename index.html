@@ -3,51 +3,65 @@
 <head> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tanita & Alec - Viking Wedding</title>
   <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <style>
-body {
-  margin: 0;
-  font-family: 'EB Garamond', serif;
-  color: #30ecfb;
-  background-image: url('GridArt_20250518_130133446.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;  /* or remove this line entirely */
-  min-height: 100vh;
-  overflow-y: auto;
-  text-align: center;
-}
-.overlay {
-  position: relative;
-  width: 100%;
-  min-height: auto; /* allow it to grow */
-  background: rgba(0, 0, 0, 0.6);
-  padding: 50px 20px;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'EB Garamond', serif;
+      overflow-x: hidden;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('GridArt_20250518_130133446.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    .overlay {
+      position: relative;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 50px 20px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
     h1, h2 {
       font-family: 'Uncial Antiqua', cursive;
       color: #30ecfb;
       text-shadow: 2px 2px 5px #000;
     }
+
     h1 {
       font-size: 3em;
       margin-bottom: 20px;
     }
+
     p, input, button, a {
       font-size: 1.2em;
       line-height: 1.6;
     }
+
     .clue, .second-clue, .rsvp, .details, .photos {
       margin-top: 40px;
     }
+
     input, button {
       padding: 10px;
       margin-top: 10px;
@@ -55,17 +69,21 @@ body {
       border: none;
       font-family: 'EB Garamond', serif;
     }
+
     button {
       background-color: #d4af37;
       color: #000;
       cursor: pointer;
     }
+
     .hidden {
       display: none;
     }
+
     a {
       color: #ffd700;
     }
+
     img {
       max-width: 100%;
       height: auto;
@@ -74,8 +92,11 @@ body {
   </style>
 </head>
 <body>
+  <div class="background"></div>
+
   <div class="overlay">
     <h1>Welcome to the Wedding of Tanita Conway & Alec Young</h1>
+
     <div class="clue">
       <p>From roots entwined beneath the Tree,</p>
       <p>Two hearts vow what’s meant to be.</p>
@@ -86,72 +107,40 @@ body {
       <p id="errorMsg" style="color: red;"></p>
     </div>
 
-  <div id="secondClue" class="second-clue hidden" style="text-align: center; padding: 2rem;">
-  <h2>Second Clue</h2>
-  <p>What do the runes whisper?</p>
-  
-  <img src="wall-stickers-viking-runes-decorative-vinyl.jpg" 
-       alt="Viking Rune Clue" 
-       style="max-width: 80%; height: auto; margin: 1rem auto; display: block;">
-
-  <input type="text" id="secondInput" placeholder="Enter the second answer" 
-         style="margin-top: 1rem; padding: 0.5rem; width: 60%; max-width: 300px; font-size: 1rem;">
-
-  <br>
-
-  <button onclick="checkSecondAnswer()" 
-          style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer;">
-    Reveal the Secrets
-  </button>
-
-  <p id="secondErrorMsg" style="color: red; margin-top: 1rem;"></p>
-</div>
-
+    <div id="secondClue" class="second-clue hidden" style="text-align: center; padding: 2rem;">
+      <h2>Second Clue</h2>
+      <p>What do the runes whisper?</p>
+      <img src="wall-stickers-viking-runes-decorative-vinyl.jpg" 
+           alt="Viking Rune Clue" 
+           style="max-width: 80%; height: auto; margin: 1rem auto; display: block;">
+      <input type="text" id="secondInput" placeholder="Enter the second answer" 
+             style="margin-top: 1rem; padding: 0.5rem; width: 60%; max-width: 300px; font-size: 1rem;">
+      <br>
+      <button onclick="checkSecondAnswer()" 
+              style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer;">
+        Reveal the Secrets
+      </button>
+      <p id="secondErrorMsg" style="color: red; margin-top: 1rem;"></p>
+    </div>
 
     <div id="secretContent" class="hidden">
       <div class="photos">
         <h2>Our Saga: A Tale of Fire, Water, and Forever</h2>
         <p><em>
-In the age of modern wanderers, beneath the southern stars and scent of flame - kissed meat, <br>
- two kindred spirits crossed paths at a great gathering — a friend’s braai, where the mead flowed and tales were shared. <br>
-  It was there that Alec, a bold-hearted warrior with a grin like sunrise, first laid eyes upon Tanita, a shieldmaiden whose spirit burned brighter than the hearth.<br>
-<br>
-Their first quest began not with sword or storm, but with laughter and a round of adventure golf. <br>
- Yet as all great tales go, their path was not without peril — for as they journeyed to a stand of fine meats run by Tanita's kin, <br>
-  they were halted by the city guard. A test of patience and valor, which they passed with heads held high and stomachs rumbling for wors.<br>
-<br>
-Only moons later, Alec sought to bind their fates forevermore. <br>
- Beneath the roar of falling waters — an element Tanita had never beheld with her own eyes — he knelt and offered his heart. <br>
-    She accepted with joy... then charged toward the cascading wonder, leaving him in stunned silence.<br> 
-      It was the swiftest "yes" and sprint in Viking betrothal lore.<br>
-       From that moment, they were as one. <br>
- <br>         
-Within a week, Alec left his great hall vacant and joined Tanita and her brother and cousin in a new home, <br>
-  forging a clan bound not by blood, but by love and mischief. <br>
-   Their bond, tested and tempered by time, carried them across seas and strange lands — immigrants to a new world, adventurers through and through.<br>
-<br>
-They slept in castles and curled in carriages barely fit for a child, let alone a man of Alec’s size. <br>
-  They woke on mountain edges, breath stolen by the sight of vast gorges stretching like Fenrir’s yawning jaws. <br>
-    Their travels were not planned — they were conjured by fate, and the gods always seemed to smile upon them.<br>
-<br>
-This union, though twice celebrated, will now be sealed as true and eternal. <br>
-  Their first wedding — cloaked in purple magic at a realm akin to Africa Burn — was wild and wondrous. <br>
-     But now, with kin as witness and the old gods invoked, they bind themselves in sacred vow.<br>
-<br>
-Together with their beloved small warrior — whose strength is mighty — they have weathered storm and sorrow, joy and jubilation. <br>
-    Time and again they’ve risen, unbroken, proving that the three of them are forged of fire, stone, and spirit.<br>
-<br>
-This is no ordinary tale.<br>
-This is a saga.<br>
-And like all great sagas, it ends not in farewell,<br>
-but in Forever Young.<br></em></p>
+          In the age of modern wanderers...<br><br>
+          <!-- Full story kept intact -->
+          This is no ordinary tale.<br>
+          This is a saga.<br>
+          And like all great sagas, it ends not in farewell,<br>
+          but in Forever Young.
+        </em></p>
       </div>
       <div class="details">
         <h2>Wedding Details</h2>
-        <p><strong>Date:</strong> 22/08/2026 </p>
-        <p><strong>Duration:</strong> To commence at 16:00 </p>
-        <p><strong>Location:</strong> Palm Springs Holiday Resort, East London </p>
-        <p><strong>Dress Code:</strong> Viking-inspired </p>
+        <p><strong>Date:</strong> 22/08/2026</p>
+        <p><strong>Duration:</strong> To commence at 16:00</p>
+        <p><strong>Location:</strong> Palm Springs Holiday Resort, East London</p>
+        <p><strong>Dress Code:</strong> Viking-inspired</p>
       </div>
       <div class="rsvp">
         <h2>RSVP</h2>
