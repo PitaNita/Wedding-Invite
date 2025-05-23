@@ -57,15 +57,19 @@
       <p id="errorMsg" style="color: red;"></p>
     </div>
    <div id="secretContent" class="hidden">
-       <div class="clue">
- <div class="photos">
+
+      <div id="secondClue" class="hidden">
+        <p><em>"Wanderers tread paths unknown,<br>
+        Yet every step brings them home."</em></p>
+        <div class="photos">
          <img src="5270e7d5856d3ac88a6ad5e2f7b9e7dd.jpg" alt="Tanita and Alec">
         <img src="wall-stickers-viking-runes-decorative-vinyl.jpg" alt="Adventure together">
+        <input type="text" id="codeInput2" placeholder="Enter the second answer">
+        <button onclick="checkSecondAnswer()">Submit</button>
+        <p id="errorMsg2" style="color: red;"></p>
       </div>
-       <input type="text" id="codeInput" placeholder="Enter the answer">
-      <button onclick="Not all who wander are lost()">Submit</button>
-        <div id="secretContent" class="hidden">
-     
+    </div>
+    <div id="secretContent" class="hidden">
         <h2> Our Saga: A Tale of Fire, Water, and Forever</h2>
         <p><em>
 In the age of modern wanderers, beneath the southern stars and scent of flame - kissed meat, <br>
