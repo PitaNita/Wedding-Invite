@@ -6,15 +6,22 @@
   <title>Tanita & Alec - Viking Wedding</title>
   <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'EB Garamond', serif;
-      color: #30ecfb;
-      background-image: url('GridArt_20250518_130133446.jpg');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-    }
+   body {
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+  color: #30ecfb;
+  background-image: url('GridArt_20250518_130133446.jpg');
+  background-size: cover;            /* Fills the screen */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat;      /* Prevents tiling */
+  background-attachment: fixed;      /* Keeps background in place on scroll */
+  min-height: 100vh;                 /* Ensures full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
     .overlay {
       background: rgba(0, 0, 0, 0.7);
       min-height: 100vh;
