@@ -8,11 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <style>
 body {
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+  color: #30ecfb;
   background-image: url('GridArt_20250518_130133446.jpg');
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-attachment: fixed;
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;  /* or remove this line entirely */
+  min-height: 100vh;
+  overflow-y: auto;
+  text-align: center;
 }
 .overlay {
   position: relative;
