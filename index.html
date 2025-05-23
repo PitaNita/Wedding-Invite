@@ -121,16 +121,28 @@ but in Forever Young.<br></em></p>
     </div>
   </div>
 
-  <script>
-    function checkAnswer() {
+ <script>
+    function checkFirstAnswer() {
       const input = document.getElementById("codeInput").value.trim().toLowerCase();
       const correctAnswer = "forever young";
       const errorMsg = document.getElementById("errorMsg");
       if (input === correctAnswer) {
-        document.getElementById("secretContent").classList.remove("hidden");
+        document.getElementById("secondClue").classList.remove("hidden");
         errorMsg.textContent = "";
       } else {
         errorMsg.textContent = "That's not quite right. Try again.";
+      }
+    }
+
+    function checkSecondAnswer() {
+      const input = document.getElementById("secondInput").value.trim().toLowerCase();
+      const correctAnswer = "not all who wander are lost";
+      const secondErrorMsg = document.getElementById("secondErrorMsg");
+      if (input === correctAnswer) {
+        document.getElementById("secretContent").classList.remove("hidden");
+        secondErrorMsg.textContent = "";
+      } else {
+        secondErrorMsg.textContent = "Hmm... look closer at the runes.";
       }
     }
   </script>
