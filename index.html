@@ -4,61 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tanita & Alec - Viking Wedding</title>
-  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Uncial Antiqua', cursive;
-      color: #30ecfb;
-      background-image: url('GridArt_20250518_130133446.jpg'); /* Replace with actual image path */
+      font-family: 'EB Garamond', serif;
+      color: #f8f8f8;
+      background-image: url('GridArt_20250518_130133446.jpg');
       background-size: cover;
       background-position: center;
       text-align: center;
     }
     .overlay {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       min-height: 100vh;
       padding: 50px 20px;
+    }
+    h1, h2 {
+      font-family: 'Uncial Antiqua', cursive;
+      color: #ffd700;
+      text-shadow: 2px 2px 5px #000;
     }
     h1 {
       font-size: 3em;
       margin-bottom: 20px;
     }
-    .clue, .rsvp, .details, .photos {
+    p, input, button, a {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    .clue, .second-clue, .rsvp, .details, .photos {
       margin-top: 40px;
     }
     input, button {
-      font-size: 1.2em;
       padding: 10px;
       margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+      font-family: 'EB Garamond', serif;
+    }
+    button {
+      background-color: #d4af37;
+      color: #000;
+      cursor: pointer;
     }
     .hidden {
       display: none;
+    }
+    a {
+      color: #ffd700;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="overlay">
-    <h1>You're cordially invited to the Wedding of </h1>
-    <h1>Tanita Conway & Alec Young</h1>
+    <h1>Welcome to the Wedding of Tanita Conway & Alec Young</h1>
     <div class="clue">
-  </style>
-</head>
-<body>
-    <div class="runes">ᛁ ᛞ ᛟ</div>
-    <div class="riddle">
       <p>From roots entwined beneath the Tree,</p>
       <p>Two hearts vow what’s meant to be.</p>
       <p>Time may pass, but love stays strong —</p>
       <p>What name will carry them along?</p>
-    </div>
       <input type="text" id="codeInput" placeholder="Enter the answer">
-      <button onclick="checkAnswer()">Submit</button>
+      <button onclick="checkFirstAnswer()">Submit</button>
       <p id="errorMsg" style="color: red;"></p>
     </div>
-   <div id="secretContent" class="hidden">
-       </div>
-       <div id="secondClue" class="second-clue hidden">
+
+    <div id="secondClue" class="second-clue hidden">
       <h2>Second Clue</h2>
       <p>What do the runes whisper?</p>
       <img src="wall-stickers-viking-runes-decorative-vinyl.jpg" alt="Viking Rune Clue">
@@ -66,8 +82,10 @@
       <button onclick="checkSecondAnswer()">Reveal the Secrets</button>
       <p id="secondErrorMsg" style="color: red;"></p>
     </div>
+
     <div id="secretContent" class="hidden">
-        <h2> Our Saga: A Tale of Fire, Water, and Forever</h2>
+      <div class="photos">
+        <h2>Our Saga: A Tale of Fire, Water, and Forever</h2>
         <p><em>
 In the age of modern wanderers, beneath the southern stars and scent of flame - kissed meat, <br>
  two kindred spirits crossed paths at a great gathering — a friend’s braai, where the mead flowed and tales were shared. <br>
@@ -102,8 +120,6 @@ This is no ordinary tale.<br>
 This is a saga.<br>
 And like all great sagas, it ends not in farewell,<br>
 but in Forever Young.<br></em></p>
-       <div id="secretContent" class="hidden">
-        <!-- Insert photos using <img> tags -->
       </div>
       <div class="details">
         <h2>Wedding Details</h2>
@@ -115,13 +131,12 @@ but in Forever Young.<br></em></p>
       <div class="rsvp">
         <h2>RSVP</h2>
         <p>Please RSVP by [01/02/2026]</p>
-        <p>Email: <a href="mailto:tanita.conway@gmail.com">Tanita.conway@gmail.com</a></p>
-        <!-- Or embed a form here -->
+        <p>Email: <a href="mailto:tanita.conway@gmail.com">tanita.conway@gmail.com</a></p>
       </div>
     </div>
   </div>
 
- <script>
+  <script>
     function checkFirstAnswer() {
       const input = document.getElementById("codeInput").value.trim().toLowerCase();
       const correctAnswer = "forever young";
