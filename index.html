@@ -22,7 +22,20 @@
   align-items: center;
   text-align: center;
 }
-
+.overlay {
+  position: fixed;                  /* Makes it overlay the entire screen */
+  top: 0;
+  left: 0;
+  width: 100vw;                     /* Full viewport width */
+  height: 100vh;                    /* Full viewport height */
+  background: rgba(0, 0, 0, 0.6);   /* Dark semi-transparent overlay */
+  padding: 50px 20px;
+  z-index: 1;                       /* Ensures it's above background but below nav/modal if any */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
     h1, h2 {
       font-family: 'Uncial Antiqua', cursive;
       color: #30ecfb;
