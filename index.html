@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'EB Garamond', serif;
-      color: #f8f8f8;
+      color: #30ecfb;
       background-image: url('GridArt_20250518_130133446.jpg');
       background-size: cover;
       background-position: center;
@@ -22,7 +22,7 @@
     }
     h1, h2 {
       font-family: 'Uncial Antiqua', cursive;
-      color: #ffd700;
+      color: #30ecfb;
       text-shadow: 2px 2px 5px #000;
     }
     h1 {
@@ -74,14 +74,27 @@
       <p id="errorMsg" style="color: red;"></p>
     </div>
 
-    <div id="secondClue" class="second-clue hidden">
-      <h2>Second Clue</h2>
-      <p>What do the runes whisper?</p>
-      <img src="wall-stickers-viking-runes-decorative-vinyl.jpg" alt="Viking Rune Clue">
-      <input type="text" id="secondInput" placeholder="Enter the second answer">
-      <button onclick="checkSecondAnswer()">Reveal the Secrets</button>
-      <p id="secondErrorMsg" style="color: red;"></p>
-    </div>
+  <div id="secondClue" class="second-clue hidden" style="text-align: center; padding: 2rem;">
+  <h2>Second Clue</h2>
+  <p>What do the runes whisper?</p>
+  
+  <img src="wall-stickers-viking-runes-decorative-vinyl.jpg" 
+       alt="Viking Rune Clue" 
+       style="max-width: 80%; height: auto; margin: 1rem auto; display: block;">
+
+  <input type="text" id="secondInput" placeholder="Enter the second answer" 
+         style="margin-top: 1rem; padding: 0.5rem; width: 60%; max-width: 300px; font-size: 1rem;">
+
+  <br>
+
+  <button onclick="checkSecondAnswer()" 
+          style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer;">
+    Reveal the Secrets
+  </button>
+
+  <p id="secondErrorMsg" style="color: red; margin-top: 1rem;"></p>
+</div>
+
 
     <div id="secretContent" class="hidden">
       <div class="photos">
