@@ -42,29 +42,6 @@
     <h1>You're cordially invited to the Wedding of </h1>
     <h1>Tanita Conway & Alec Young</h1>
     <div class="clue">
-      background-size: contain;
-      width: 600px;
-      height: 800px;
-      padding: 80px 40px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      text-align: center;
-      color: #30ecfb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .runes {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .riddle {
-      font-size: 1.4rem;
-      line-height: 2;
-    }
-    .answer {
-      margin-top: 30px;
-      font-style: italic;
-    }
   </style>
 </head>
 <body>
@@ -83,11 +60,16 @@
       <button onclick="checkAnswer()">Submit</button>
       <p id="errorMsg" style="color: red;"></p>
     </div>
+   <div id="secretContent" class="hidden">
+       <div class="clue">
  <div class="photos">
          <img src="5270e7d5856d3ac88a6ad5e2f7b9e7dd.jpg" alt="Tanita and Alec">
         <img src="wall-stickers-viking-runes-decorative-vinyl.jpg" alt="Adventure together">
       </div>
-    <div id="secretContent" class="hidden">
+ 
+       <input type="text" id="codeInput" placeholder="Enter the answer">
+      <button onclick="checkAnswer()">Submit</button>
+        <div id="secretContent" class="hidden">
      
         <h2> Our Saga: A Tale of Fire, Water, and Forever</h2>
         <p><em>
