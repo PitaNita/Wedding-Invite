@@ -1,82 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
 <head> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tanita & Alec - Viking Wedding</title>
   <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <style>
-body {
-  margin: 0;
-  font-family: 'EB Garamond', serif;
-  color: #30ecfb;
-  background-image: url('GridArt_20250518_130133446.jpg');
-  background-size: cover;
-  background-position: relative;
-  background-repeat: no-repeat;
-  background-attachment: scroll;  /* or remove this line entirely */
-  min-height: 100vh;
-  overflow-y: auto;
-  text-align: center;
-}
-.overlay {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.75);
-  padding: 50px 20px;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-}
+    body {
+      margin: 0;
+      font-family: 'EB Garamond', serif;
+      color: #30ecfb;
+      background-image: url('GridArt_20250518_130133446.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Scroll effect */
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll; /* Fix for mobile scrolling issues */
+      }
+    }
+
+    .overlay {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 4rem 1rem;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     h1, h2 {
       font-family: 'Uncial Antiqua', cursive;
       color: #30ecfb;
       text-shadow: 2px 2px 5px #000;
     }
+
     h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      margin-bottom: 1rem;
     }
+
+    h2 {
+      font-size: clamp(1.2rem, 3.5vw, 2rem);
+    }
+
     p, input, button, a {
-      font-size: 1.2em;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
       line-height: 1.6;
     }
-    .clue, .second-clue, .rsvp, .details, .photos {
-      margin-top: 40px;
-    }
+
     input, button {
-      padding: 10px;
-      margin-top: 10px;
+      padding: 0.75rem;
+      margin-top: 1rem;
       border-radius: 5px;
       border: none;
       font-family: 'EB Garamond', serif;
+      width: 90%;
+      max-width: 300px;
     }
-    input, button {
-  width: 90%;
-  max-width: 300px;
-}
+
     button {
       background-color: #d4af37;
       color: #000;
       cursor: pointer;
     }
-    .hidden {
-      display: none;
-    }
+
     a {
       color: #ffd700;
     }
+
     img {
       max-width: 100%;
       height: auto;
       margin-top: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .clue, .second-clue, .rsvp, .details, .photos {
+      margin-top: 2rem;
     }
   </style>
 </head>
