@@ -96,6 +96,67 @@ body {
 
   <div id="secondClue" class="second-clue hidden" style="text-align: center; padding: 2rem;">
   <h2>What do the runes whisper?</h2>
+
+  <img src="wall-stickers-viking-runes-decorative-vinyl.jpg" 
+       alt="Viking Rune Clue" 
+       style="max-width: 80%; height: auto; margin: 1rem auto; display: block;">
+
+  <!-- Extra hint image, initially hidden -->
+  <img id="extraHintImage"
+       src="your-hint-image.jpg" 
+       alt="Extra Rune Hint" 
+       class="hidden"
+       style="max-width: 80%; height: auto; margin: 1rem auto; display: block;">
+
+  <input type="text" id="secondInput" placeholder="Enter the second answer" 
+         style="margin-top: 1rem; padding: 0.5rem; width: 60%; max-width: 300px; font-size: 1rem;">
+
+  <br>
+
+  <button onclick="checkSecondAnswer()" 
+          style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer;">
+    Reveal the Secrets
+  </button>
+
+  <p id="secondErrorMsg" style="color: red; margin-top: 1rem;"></p>
+</div>
+
+<script>
+  function checkFirstAnswer() {
+    const input = document.getElementById("codeInput").value.trim().toLowerCase();
+    const correctAnswer = "forever young";
+    const errorMsg = document.getElementById("errorMsg");
+    if (input === correctAnswer) {
+      document.getElementById("secondClue").classList.remove("hidden");
+      errorMsg.textContent = "";
+    } else {
+      errorMsg.textContent = "That's not quite right. Try again.";
+    }
+  }
+
+  let secondClueAttempts = 0;
+
+  function checkSecondAnswer() {
+    const input = document.getElementById("secondInput").value.trim().toLowerCase();
+    const correctAnswer = "not all who wander are lost";
+    const secondErrorMsg = document.getElementById("secondErrorMsg");
+
+    if (input === correctAnswer) {
+      document.getElementById("secretContent").classList.remove("hidden");
+      secondErrorMsg.textContent = "";
+    } else {
+      secondClueAttempts++;
+      secondErrorMsg.textContent = "Hmm... look closer at the runes.";
+
+      if (secondClueAttempts === 3) {
+        const hintImg = document.getElementById("extraHintImage");
+        hintImg.classList.remove("hidden");
+        secondErrorMsg.textContent += " Here's a little extra help from the gods...";
+      }
+    }
+  }
+</script>
+  <h2>What do the runes whisper?</h2>
   
   <img src="wall-stickers-viking-runes-decorative-vinyl.jpg" 
        alt="Viking Rune Clue" 
